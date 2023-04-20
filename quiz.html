@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: palegreen;
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(1, 1, 17);
+        }
+
+        input {
+            background-color: aqua;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form">
+        <h1>QUIZ</h1>
+        <label>1.Chernobyl nuclear plant located in which country? </label>
+        <br>
+        <div id="an1">
+            <input type="radio" name="ans1" value="China"> China<br>
+            <input type="radio" name="ans1" value="India"> India<br>
+            <input type="radio" name="ans1" value="Ukraine"> Ukraine<br>
+            <input type="radio" name="ans1" value="Russia"> Russia<br>
+            <br>
+            <div id="n1" style="color: blueviolet"></div>
+            <div id="n11" style="color: red"></div>
+        </div>
+        <br>
+        <label>2.Which planet has the most Moons?</label><br>
+        <div id="an2">
+            <input type="radio" name="ans2" value="Neptune"> Neptune<br>
+            <input type="radio" name="ans2" value="Jupiter"> Jupiter<br>
+            <input type="radio" name="ans2" value="Saturn"> Saturn<br>
+            <input type="radio" name="ans2" value="Earth"> Earth<br>
+            <br>
+            <div id="n2" style="color: blueviolet"></div>
+            <div id="n22" style="color: red"></div>
+        </div>
+        <br>
+        <label>3.Which city is known as "The Pink City"?</label><br>
+        <div id="an3">
+            <input type="radio" name="ans3" value="Rome"> Rome<br>
+            <input type="radio" name="ans3" value="Jaipur"> Jaipur<br>
+            <input type="radio" name="ans3" value="Surat"> Surat<br>
+            <input type="radio" name="ans3" value="Bristol"> Bristol<br>
+            <br>
+            <div id="n3" style="color: blueviolet;"></div>
+            <div id="n33" style="color: red"></div>
+        </div>
+        <br>
+        <label>4.How many rings is the Olympic symbol made up of?</label><br>
+        <div id="an4">
+            <input type="radio" name="ans4" value="5"> 5<br>
+            <input type="radio" name="ans4" value="7"> 7<br>
+            <input type="radio" name="ans4" value="6"> 6<br>
+            <input type="radio" name="ans4" value="8"> 8<br>
+            <br>
+            <div id="n4" style="color: blueviolet;"></div>
+            <div id="n44" style="color: red"></div>
+        </div>
+        <br>
+        <label>5.Pyrophobia is the fear of what?</label><br>
+        <div id="an5">
+            <input type="radio" name="ans5" value="Water"> Water<br>
+            <input type="radio" name="ans5" value="Light"> Light<br>
+            <input type="radio" name="ans5" value="Fire"> Fire<br>
+            <input type="radio" name="ans5" value="Lamp"> Lamp<br>
+            <br>
+            <div id="n5" style="color: blueviolet;"></div>
+            <div id="n55" style="color: red"></div>
+        </div>
+    </form>
+    <br>
+    <p id="output" style="position:relative;color: brown;text-align: center;border-style: ridge;"></p>
+    <button onclick="valuate()" style="background-color: rgb(102, 95, 163);">Submit</button><br>
+    <br>
+    <button onclick="clearForm()" style="background-color: rgb(102, 95, 163);">Clear</button><br>
+    <br>
+
+</body>
+<script>
+    var arr = [];
+    function valuate() {
+
+        //ans1 is the first question
+        var ans1 = document.getElementsByName("ans1");
+        for (let i = 0; i < ans1.length; i++) {
+            if (ans1[i].checked) {
+                var res1 = ans1[i].value;
+                if (res1 === "Ukraine") {
+                    result1 = 1;
+                     document.getElementById("n1").innerHTML = "Correct Answer."
+                }
+                else {
+                    result1 = 0;
+                    document.getElementById("n11").innerHTML = "Incorrect, Answer is 'Ukraine'."
+                }
+            }
+        }
+
+        //ans2 is the 2nd question
+        var ans2 = document.getElementsByName("ans2");
+        for (let i = 0; i < ans2.length; i++) {
+            if (ans2[i].checked) {
+                var res2 = ans2[i].value;
+                if (res2 === "Saturn") {
+                    result2 = 1;
+                    document.getElementById("n2").innerHTML = "Correct Answer."
+                }
+                else {
+                    result2 = 0;
+                    document.getElementById("n22").innerHTML = "Incorrect, Answer is 'Saturn'."
+                }
+            }
+        }
+
+        //ans3 is the 3rd question
+        var ans3 = document.getElementsByName("ans3");
+        for (let i = 0; i < ans3.length; i++) {
+            if (ans3[i].checked) {
+                var res3 = ans3[i].value;
+                if (res3 === "Jaipur") {
+                    result3 = 1;
+                    document.getElementById("n3").innerHTML = "Correct Answer."
+                }
+                else {
+                    result3 = 0;
+                    document.getElementById("n33").innerHTML = "Incorrect, Answer is 'Jaipur'."
+                }
+            }
+        }
+
+        //ans4 is the 4th question
+        var ans4 = document.getElementsByName("ans4");
+        for (let i = 0; i < ans4.length; i++) {
+            if (ans4[i].checked) {
+                var res4 = ans4[i].value;
+                if (res4 === "5") {
+                    result4 = 1;
+                    document.getElementById("n4").innerHTML = "Correct Answer."
+                }
+                else {
+                    result4 = 0;
+                    document.getElementById("n44").innerHTML = "Incorrect, Answer is '5'."
+                }
+            }
+        }
+
+        //ans5 is the 5th question
+        var ans5 = document.getElementsByName("ans5");
+        for (let i = 0; i < ans5.length; i++) {
+            if (ans5[i].checked) {
+                var res5 = ans5[i].value;
+                if (res5 === "Fire") {
+                    result5 = 1;
+                    document.getElementById("n5").innerHTML = "Correct Answer."
+                }
+                else {
+                    result5 = 0;
+                    document.getElementById("n55").innerHTML = "Incorrect, Answer is 'Fire'."
+                }
+            }
+        }
+        
+
+        // res is ued to get the total point
+        var res = result1 + result2 + result3 + result4 + result5;
+        var obj = {
+            ans1: res1,
+            ans2: res2,
+            ans3: res3,
+            ans4: res4,
+            ans5: res5,
+            result: res,
+        }
+        arr.push(obj)
+
+
+        var output = document.getElementById("output")
+        output.innerHTML = "You Have Scored " + res + " point";
+        console.log(arr);
+    }
+
+    //used to reset the input data
+    function clearForm() {
+        form.reset()
+        document.getElementById("n1").innerHTML=''
+        document.getElementById("n2").innerHTML=''
+        document.getElementById("n3").innerHTML=''
+        document.getElementById("n4").innerHTML=''
+        document.getElementById("n5").innerHTML=''
+        document.getElementById("n11").innerHTML=''
+        document.getElementById("n22").innerHTML=''
+        document.getElementById("n33").innerHTML=''
+        document.getElementById("n44").innerHTML=''
+        document.getElementById("n55").innerHTML=''
+        document.getElementById("output").innerHTML=''
+    };
+
+</script>
+
+</html>
